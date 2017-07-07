@@ -5,6 +5,13 @@ class VotersController < ApplicationController
     @voters = Voter.all
   end
 
+  def search
+  end
+
+  def results
+    @voters = Voter.search params[:q]
+  end
+
   def show
   end
 

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search Voters</h1>
+
+<%= form_tag(results_voters_path, method: :get) do %>
+  <div class="field">
+    <%= label_tag :query, "Search" %>
+    <%= text_field_tag :q %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Search" %>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to 'All Voters', voters_path %>
