@@ -1,0 +1,49 @@
+<%= form_with(model: voter, local: true) do |form| %>
+  <% if voter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(voter.errors.count, "error") %> prohibited this voter from being saved:</h2>
+
+      <ul>
+      <% voter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :voter_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :voter_last_name %>
+  </div>
+
+  <%= form.fields_for :address do |address_form| %>
+    <div>
+      <%= address_form.label :street, "Address" %>
+      <%= address_form.text_field :street %>
+    </div>
+
+    <div>
+      <%= address_form.label :city %>
+      <%= address_form.text_field :city %>
+    </div>
+
+    <div>
+      <%= address_form.label :zip_code %>
+      <%= address_form.text_field :zip_code %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :registered %>
+    <%= form.text_field :registered, id: :voter_registered %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

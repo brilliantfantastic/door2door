@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @voter.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @voter.last_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @voter.address.try(:street) %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @voter.address.try(:city) %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @voter.address.try(:zip_code) %>
+</p>
+
+<p>
+  <strong>Registered:</strong>
+  <%= @voter.registered %>
+</p>
+
+<%= link_to 'Edit', edit_voter_path(@voter) %> |
+<%= link_to 'Back', voters_path %>
