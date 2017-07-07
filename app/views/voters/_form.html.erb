@@ -39,8 +39,10 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :registered %>
-    <%= form.text_field :registered, id: :voter_registered %>
+    <%= form.radio_button :registered, "D" %>
+    <%= form.label :registered_democrat, "Democrat" %>
+    <%= form.radio_button :registered, "R" %>
+    <%= form.label :registered_republican, "Republican" %>
   </div>
 
   <div class="actions">
