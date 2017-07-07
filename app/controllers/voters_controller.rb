@@ -14,7 +14,7 @@ class VotersController < ApplicationController
   end
 
   def edit
-    @voter.build_address
+    @voter.build_address if @voter.address.nil?
   end
 
   def create
@@ -37,6 +37,7 @@ class VotersController < ApplicationController
         format.html { redirect_to @voter, notice: 'Voter was successfully updated.' }
         format.json { render :show, status: :ok, location: @voter }
       else
+        @voter.build_address if @voter.address.nil?
         format.html { render :edit }
         format.json { render json: @voter.errors, status: :unprocessable_entity }
       end
@@ -59,8 +60,8 @@ class VotersController < ApplicationController
 
   def voter_params
     params.require(:voter).permit(:first_name, :last_name,
-                                  :registered,
-                                  address_attributes: [:street, :city,
+                                  :registered, :notes,
+                                  address_attributes: [:id, :street, :city,
                                                        :zip_code])
   end
 end

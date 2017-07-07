@@ -22,17 +22,19 @@
   </div>
 
   <%= form.fields_for :address do |address_form| %>
-    <div>
+    <%= address_form.hidden_field :id %>
+
+    <div class="field">
       <%= address_form.label :street, "Address" %>
       <%= address_form.text_field :street %>
     </div>
 
-    <div>
+    <div class="field">
       <%= address_form.label :city %>
       <%= address_form.text_field :city %>
     </div>
 
-    <div>
+    <div class="field">
       <%= address_form.label :zip_code %>
       <%= address_form.text_field :zip_code %>
     </div>
@@ -43,6 +45,11 @@
     <%= form.label :registered_democrat, "Democrat" %>
     <%= form.radio_button :registered, "R" %>
     <%= form.label :registered_republican, "Republican" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, rows: 10, cols: 60 %>
   </div>
 
   <div class="actions">

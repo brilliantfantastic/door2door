@@ -30,5 +30,10 @@
   <%= @voter.registered %>
 </p>
 
+<p>
+  <strong>Notes:</strong>
+  <%= @voter.notes %>
+</p>
+
 <%= link_to 'Edit', edit_voter_path(@voter) %> |
 <%= link_to 'Back', voters_path %>
