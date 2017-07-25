@@ -47,6 +47,11 @@
     <%= form.label :registered_republican, "Republican" %>
   </div>
 
+  <div class="field">
+    <%= form.label :level_of_interest %>
+    <%= form.select :level_of_interest, [1, 2, 3], {include_blank: "None"} %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

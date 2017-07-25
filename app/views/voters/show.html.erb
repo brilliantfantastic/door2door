@@ -30,5 +30,10 @@
   <%= @voter.registered %>
 </p>
 
+<p>
+  <strong>Level of interest:</strong>
+  <%= @voter.level_of_interest %>
+</p>
+
 <%= link_to 'Edit', edit_voter_path(@voter) %> |
 <%= link_to 'Back', voters_path %>
