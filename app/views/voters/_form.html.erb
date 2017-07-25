@@ -48,6 +48,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :requested_sign %>
+    <%= form.check_box :requested_sign %>
+  </div>
+
+  <div class="field">
     <%= form.label :level_of_interest %>
     <%= form.select :level_of_interest, [1, 2, 3], {include_blank: "None"} %>
   </div>

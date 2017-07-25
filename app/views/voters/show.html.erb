@@ -31,6 +31,11 @@
 </p>
 
 <p>
+  <strong>Requested sign:</strong>
+  <%= @voter.requested_sign? ? "Yes" : "No" %>
+</p>
+
+<p>
   <strong>Level of interest:</strong>
   <%= @voter.level_of_interest %>
 </p>
