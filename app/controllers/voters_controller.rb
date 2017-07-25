@@ -67,7 +67,7 @@ class VotersController < ApplicationController
 
   def voter_params
     params.require(:voter).permit(:first_name, :last_name,
-                                  :registered, :notes,
+                                  :registered,
                                   address_attributes: [:id, :street, :city,
                                                        :zip_code])
   end
